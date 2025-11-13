@@ -1,0 +1,594 @@
+/* ========================================
+   ID ENERGY GROUP - ESTILOS CSS
+   Paleta de Energías Renovables
+   ======================================== */
+
+/* ========================================
+   VARIABLES CSS - PALETA DE COLORES
+   ======================================== */
+:root {
+    /* Colores Corporativos - Energías Renovables */
+    --color-primario: #2E7D32;
+    --color-secundario: #1976D2;
+    --color-acento: #FFA726;
+    --color-texto: #2C3E50;
+    --color-texto-claro: #7F8C8D;
+    --color-blanco: #FFFFFF;
+    --color-fondo: #F5F7FA;
+    --color-footer: #1A1A1A;
+    
+    /* Gradientes */
+    --gradiente-principal: linear-gradient(135deg, #2E7D32 0%, #1976D2 100%);
+    --gradiente-hover: linear-gradient(135deg, #388E3C 0%, #2196F3 100%);
+    
+    /* Sombras */
+    --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --sombra-intensa: 0 8px 24px rgba(0, 0, 0, 0.2);
+    
+    /* Espaciado */
+    --espaciado-pequeno: 8px;
+    --espaciado-medio: 16px;
+    --espaciado-grande: 32px;
+    --espaciado-xlarge: 48px;
+    
+    /* Transiciones */
+    --transicion-rapida: 0.3s ease;
+    --transicion-media: 0.5s ease;
+}
+
+/* ========================================
+   RESET Y ESTILOS GENERALES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* ========================================
+   HEADER - FIJO AL HACER SCROLL
+   ======================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--gradiente-principal);
+    color: var(--color-blanco);
+    padding: 0;
+    box-shadow: var(--sombra-media);
+    z-index: 1000;
+    transition: all var(--transicion-rapida);
+}
+
+header h1 {
+    text-align: center;
+    padding: var(--espaciado-medio) var(--espaciado-medio);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.logo {
+    width: 60px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ========================================
+   NAVEGACIÓN - MENÚ HORIZONTAL
+   ======================================== */
+nav {
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+nav a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: var(--espaciado-medio) var(--espaciado-grande);
+    display: inline-block;
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all var(--transicion-rapida);
+    position: relative;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-bottom: 3px solid var(--color-acento);
+    transform: translateY(-2px);
+}
+
+nav a:active {
+    transform: translateY(0);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: var(--color-acento);
+    transition: all var(--transicion-rapida);
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 80%;
+}
+
+/* ========================================
+   HERO PARALLAX CON VIDEO
+   ======================================== */
+.hero-parallax {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 140px;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#heroVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    /* El efecto parallax se aplicará con JavaScript */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(46, 125, 50, 0.3) 0%,
+        rgba(25, 118, 210, 0.5) 100%
+    );
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: var(--color-blanco);
+    padding: var(--espaciado-grande);
+    max-width: 900px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: var(--espaciado-medio);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    color: #F5F7FA;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: var(--espaciado-grande);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 300;
+    border-color: #1A1A1A;
+    color: #F5F7FA;
+    
+   
+}
+
+.cta-button {
+    display: inline-block;
+    padding: var(--espaciado-medio) var(--espaciado-xlarge);
+    background-color: var(--color-acento);
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all var(--transicion-rapida);
+    box-shadow: var(--sombra-intensa);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background-color: #FF9800;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button:active {
+    transform: translateY(-1px);
+}
+
+/* ========================================
+   MAIN - CONTENIDO PRINCIPAL
+   ======================================== */
+main {
+    padding: var(--espaciado-xlarge) var(--espaciado-medio);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: calc(100vh - 140px - 80px);
+}
+
+/* ========================================
+   SECCIONES
+   ======================================== */
+section {
+    background-color: var(--color-blanco);
+    padding: var(--espaciado-grande);
+    margin-bottom: var(--espaciado-grande);
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    transition: box-shadow var(--transicion-rapida);
+}
+
+section:hover {
+    box-shadow: var(--sombra-media);
+}
+
+section h2 {
+    color: var(--color-primario);
+    font-size: 2rem;
+    margin-bottom: var(--espaciado-medio);
+    padding-bottom: var(--espaciado-pequeno);
+    border-bottom: 3px solid var(--color-acento);
+    display: inline-block;
+}
+
+section p {
+    color: var(--color-texto-claro);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: var(--espaciado-medio);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+footer {
+    background-color: var(--color-footer);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: var(--espaciado-grande);
+    margin-top: var(--espaciado-xlarge);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+/* ========================================
+   DISEÑO RESPONSIVE - TABLETS
+   ======================================== */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+        padding: var(--espaciado-medio) var(--espaciado-pequeno);
+    }
+    
+    nav {
+        flex-direction: column;
+        padding: var(--espaciado-pequeno) 0;
+    }
+    
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: var(--espaciado-medio);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    nav a:hover {
+        transform: translateX(5px);
+    }
+    
+    .hero-parallax {
+        margin-top: 200px;
+        height: 70vh;
+        min-height: 500px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+        
+    }
+    
+    .cta-button {
+        padding: 12px 32px;
+        font-size: 1rem;
+    }
+    
+    main {
+        padding: var(--espaciado-medio);
+    }
+    
+    section h2 {
+        font-size: 1.5rem;
+    }
+    
+    section p {
+        font-size: 1rem;
+    }
+}
+
+/* ========================================
+   DISEÑO RESPONSIVE - MÓVILES
+   ======================================== */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.3rem;
+        padding: var(--espaciado-pequeno);
+    }
+    
+    nav a {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    .hero-parallax {
+        margin-top: 220px;
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .cta-button {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+    
+    main {
+        padding: var(--espaciado-pequeno);
+    }
+    
+    section {
+        padding: var(--espaciado-medio);
+        border-radius: 8px;
+    }
+    
+    section h2 {
+        font-size: 1.3rem;
+    }
+    
+    section p {
+        font-size: 0.95rem;
+    }
+    
+    footer {
+        padding: var(--espaciado-medio);
+        font-size: 0.85rem;
+    }
+}
+
+/* ========================================
+   UTILIDADES Y ANIMACIONES
+   ======================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+nav a:focus {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 2px;
+}
+
+::selection {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+/* ===================================
+   ESTILOS DEL FOOTER - ID ENERGYAS
+   =================================== */
+
+/* Footer principal */
+footer {
+  background: #000000;
+  color: white;
+  padding: 40px 20px 20px;
+  margin-top: 50px;
+}
+
+/* Contenedor del footer */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Información del footer */
+.footer-info {
+  text-align: center;
+}
+
+.footer-info h3 {
+  margin: 0 0 15px 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.footer-info p {
+  margin: 5px 0;
+  opacity: 0.9;
+}
+
+/* Enlaces de redes sociales */
+.social-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
+}
+
+.social-links a img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+/* Estilos específicos por red social */
+.social-links a.email {
+  background: linear-gradient(135deg, #EA4335 0%, #ff6b6b 100%);
+  border-color: #EA4335;
+}
+
+.social-links a.facebook {
+  background: linear-gradient(135deg, #1877F2 0%, #4a9eff 100%);
+  border-color: #1877F2;
+}
+
+.social-links a.instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-color: #e6683c;
+}
+
+.social-links a.linkedin {
+  background: linear-gradient(135deg, #0A66C2 0%, #0e8dff 100%);
+  border-color: #0A66C2;
+}
+
+.social-links a.twitter {
+  background: linear-gradient(135deg, #14171A 0%, #657786 100%);
+  border-color: #657786;
+}
+
+.social-links a.whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #34e07a 100%);
+  border-color: #25D366;
+}
+
+/* Efectos hover */
+.social-links a:hover {
+  transform: translateY(-5px) scale(1.15);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
+  filter: brightness(1.2);
+}
+
+/* Divisor */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 10px 0;
+}
+
+/* Parte inferior del footer */
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ===================================
+   RESPONSIVE - MÓVILES
+   =================================== */
+@media (max-width: 768px) {
+  footer {
+    padding: 30px 15px 15px;
+  }
+  
+  .social-links a {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .social-links a img {
+    width: 25px;
+    height: 25px;
+  }
+}

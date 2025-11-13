@@ -1,0 +1,517 @@
+:root {
+    --color-primario: #2E7D32;
+    --color-secundario: #1976D2;
+    --color-acento: #FFA726;
+    --color-texto: #2C3E50;
+    --color-texto-claro: #7F8C8D;
+    --color-blanco: #FFFFFF;
+    --color-fondo: #F5F7FA;
+    --color-footer: #1A1A1A;
+    --color-azul-oscuro: #003366;
+    --color-cyan: #00BCD4;
+    --gradiente-principal: linear-gradient(135deg, #2E7D32 0%, #1976D2 100%);
+    --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --espaciado-pequeno: 8px;
+    --espaciado-medio: 16px;
+    --espaciado-grande: 32px;
+    --espaciado-xlarge: 48px;
+    --transicion-rapida: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--gradiente-principal);
+    color: var(--color-blanco);
+    box-shadow: var(--sombra-media);
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--espaciado-medio);
+}
+
+.logo {
+    width: 60px;
+    margin-right: 15px;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: var(--espaciado-medio) var(--espaciado-grande);
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all var(--transicion-rapida);
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-bottom: 3px solid var(--color-acento);
+}
+
+main {
+    margin-top: 140px;
+    padding: var(--espaciado-xlarge) var(--espaciado-medio);
+}
+
+/* Sección de Oficinas */
+.oficinas-section {
+    background-color: var(--color-blanco);
+    padding: var(--espaciado-xlarge);
+    margin-bottom: var(--espaciado-grande);
+    border-radius: 12px;
+    box-shadow: var(--sombra-media);
+}
+
+.oficinas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--espaciado-grande);
+    margin-top: var(--espaciado-grande);
+}
+
+.oficina-card {
+    padding: var(--espaciado-medio);
+    border-left: 4px solid var(--color-cyan);
+    transition: transform var(--transicion-rapida);
+}
+
+.oficina-card:hover {
+    transform: translateX(5px);
+}
+
+.oficina-principal {
+    background: var(--color-azul-oscuro);
+    color: var(--color-blanco);
+    padding: var(--espaciado-grande);
+    border-radius: 8px;
+    border-left: none;
+}
+
+.oficina-principal h3 {
+    color: var(--color-blanco);
+    margin-bottom: var(--espaciado-pequeno);
+}
+
+.oficina-principal .ciudad {
+    color: var(--color-cyan);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: var(--espaciado-medio);
+}
+
+.oficina-card h3 {
+    color: var(--color-primario);
+    font-size: 1.5rem;
+    margin-bottom: var(--espaciado-pequeno);
+}
+
+.oficina-card .ciudad {
+    color: var(--color-cyan);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: var(--espaciado-medio);
+}
+
+.oficina-card p {
+    color: var(--color-texto);
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+.oficina-principal p {
+    color: var(--color-blanco);
+}
+
+.contacto-info {
+    margin-top: var(--espaciado-medio);
+    padding-top: var(--espaciado-medio);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Sección de Formulario */
+.formulario-section {
+    background-color: var(--color-blanco);
+    padding: var(--espaciado-xlarge);
+    border-radius: 12px;
+    box-shadow: var(--sombra-media);
+    margin-bottom: var(--espaciado-grande);
+}
+
+.formulario-section h2 {
+    color: var(--color-azul-oscuro);
+    font-size: 2.5rem;
+    margin-bottom: var(--espaciado-medio);
+}
+
+.formulario-intro {
+    margin-bottom: var(--espaciado-grande);
+}
+
+.formulario-intro p {
+    color: var(--color-texto);
+    font-size: 1.1rem;
+    margin-bottom: var(--espaciado-medio);
+}
+
+.telefono-contacto {
+    color: var(--color-cyan);
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+    margin-top: var(--espaciado-pequeno);
+}
+
+.formulario-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--espaciado-medio);
+    margin-top: var(--espaciado-grande);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: var(--espaciado-pequeno);
+    color: var(--color-texto);
+}
+
+input,
+textarea {
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    transition: border var(--transicion-rapida), box-shadow var(--transicion-rapida);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #999;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-azul-oscuro);
+    box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: var(--espaciado-pequeno) 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.btn-enviar {
+    background-color: var(--color-azul-oscuro);
+    color: var(--color-blanco);
+    padding: 16px 48px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: 2px solid var(--color-azul-oscuro);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all var(--transicion-rapida);
+    text-transform: uppercase;
+    margin-top: var(--espaciado-medio);
+}
+
+.btn-enviar:hover {
+    background-color: var(--color-blanco);
+    color: var(--color-azul-oscuro);
+}
+
+#respuesta {
+    margin-top: var(--espaciado-medio);
+    padding: var(--espaciado-medio);
+    border-radius: 4px;
+    font-weight: 600;
+    display: none;
+}
+
+#respuesta.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+
+#respuesta.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+/* Sección de Mapa */
+.mapa-section {
+    background-color: var(--color-blanco);
+    padding: var(--espaciado-xlarge);
+    border-radius: 12px;
+    box-shadow: var(--sombra-media);
+    margin-bottom: var(--espaciado-grande);
+}
+
+.mapa-section h2 {
+    color: var(--color-primario);
+    font-size: 2rem;
+    margin-bottom: var(--espaciado-grande);
+}
+
+#map {
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    box-shadow: var(--sombra-suave);
+}
+
+footer {
+    background-color: var(--color-footer);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: var(--espaciado-grande);
+    margin-top: var(--espaciado-xlarge);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .formulario-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .oficinas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    nav {
+        flex-direction: column;
+    }
+    
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: var(--espaciado-medio);
+    }
+    
+    main {
+        margin-top: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .formulario-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .telefono-contacto {
+        font-size: 1.5rem;
+    }
+    
+    #map {
+        height: 350px;
+    }
+}
+/* ===================================
+   ESTILOS DEL FOOTER - ID ENERGYAS
+   =================================== */
+
+/* Footer principal */
+footer {
+  background: #000000;
+  color: white;
+  padding: 40px 20px 20px;
+  margin-top: 50px;
+}
+
+/* Contenedor del footer */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Información del footer */
+.footer-info {
+  text-align: center;
+}
+
+.footer-info h3 {
+  margin: 0 0 15px 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.footer-info p {
+  margin: 5px 0;
+  opacity: 0.9;
+}
+
+/* Enlaces de redes sociales */
+.social-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
+}
+
+.social-links a img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+/* Estilos específicos por red social */
+.social-links a.email {
+  background: linear-gradient(135deg, #EA4335 0%, #ff6b6b 100%);
+  border-color: #EA4335;
+}
+
+.social-links a.facebook {
+  background: linear-gradient(135deg, #1877F2 0%, #4a9eff 100%);
+  border-color: #1877F2;
+}
+
+.social-links a.instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-color: #e6683c;
+}
+
+.social-links a.linkedin {
+  background: linear-gradient(135deg, #0A66C2 0%, #0e8dff 100%);
+  border-color: #0A66C2;
+}
+
+.social-links a.twitter {
+  background: linear-gradient(135deg, #14171A 0%, #657786 100%);
+  border-color: #657786;
+}
+
+.social-links a.whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #34e07a 100%);
+  border-color: #25D366;
+}
+
+/* Efectos hover */
+.social-links a:hover {
+  transform: translateY(-5px) scale(1.15);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
+  filter: brightness(1.2);
+}
+
+/* Divisor */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 10px 0;
+}
+
+/* Parte inferior del footer */
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ===================================
+   RESPONSIVE - MÓVILES
+   =================================== */
+@media (max-width: 768px) {
+  footer {
+    padding: 30px 15px 15px;
+  }
+  
+  .social-links a {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .social-links a img {
+    width: 25px;
+    height: 25px;
+  }
+}
