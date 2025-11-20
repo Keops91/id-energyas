@@ -1,0 +1,8 @@
+# Permitir a todos los bots acceder al sitio
+User-agent: *
+Allow: /
+
+# Evitar que indexen archivos del sistema de GitHub Pages (opcional)
+Disallow: /README.md
+Disallow: /LICENSE
+Sitemap: https://keops91.github.io/id-energyas/sitemap.xml
